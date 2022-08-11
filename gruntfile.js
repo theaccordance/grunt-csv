@@ -1,27 +1,23 @@
-
 module.exports = function (grunt) {
-
+    "use strict";
     function loadConfig(pattern) {
         var config = {},
             fileName,
             fileData;
 
         grunt.file.expand(pattern).forEach(function (filePath) {
-            console.log(filePath);
             fileName = filePath.split('/').pop().split('.')[0];
-            fileData = grunt.file.readJSON(filePath);
+            fileData = require("./" + filePath)(grunt);
             config[fileName] = fileData;
         });
         return config;
     }
 
-    var configuration = {
+    var configuration = Object.assign({
         pkg: grunt.file.readJSON("package.json")
-    };
+    }, loadConfig('configs/**/*.js'));
 
-    grunt.util._.extend(configuration, loadConfig('configs/**/*.json'));
-
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
@@ -35,12 +31,8 @@ module.exports = function (grunt) {
     grunt.registerTask('test', ['clean', 'papaparse', 'nodeunit']);
 
     // By default, lint and run all tests.
-    grunt.registerTask('default', ['jshint', 'test']);
-
-    grunt.registerTask("foo", function () {
-       console.log(grunt.config());
-    });
+    grunt.registerTask('default', ['jslint', 'test']);
 
     grunt.config.init(configuration);
-    console.log("grunt loaded.");
+    grunt.log.ok("Grunt Loaded.");
 };

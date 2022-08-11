@@ -108,6 +108,7 @@ node_modules/*
 .idea/
 
 temp/
+tmp/
 
 .strapi-updater.json
 
