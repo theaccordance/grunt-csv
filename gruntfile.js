@@ -7,11 +7,11 @@ module.exports = function (grunt) {
             fileData;
 
         grunt.file.expand(pattern).forEach(function (filePath) {
+            console.log(filePath);
             fileName = filePath.split('/').pop().split('.')[0];
-            fileData = require('./' + filePath)(grunt);
+            fileData = grunt.file.readJSON(filePath);
             config[fileName] = fileData;
         });
-
         return config;
     }
 
@@ -19,7 +19,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON("package.json")
     };
 
-    grunt.util._.extend(configuration, loadConfig('configs/**/*.js'));
+    grunt.util._.extend(configuration, loadConfig('configs/**/*.json'));
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -37,6 +37,10 @@ module.exports = function (grunt) {
     // By default, lint and run all tests.
     grunt.registerTask('default', ['jshint', 'test']);
 
-    grunt.initConfig(configuration);
+    grunt.registerTask("foo", function () {
+       console.log(grunt.config());
+    });
+
+    grunt.config.init(configuration);
     console.log("grunt loaded.");
 };
