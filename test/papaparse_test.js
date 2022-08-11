@@ -22,7 +22,7 @@ var grunt = require('grunt');
     test.ifError(value)
 */
 
-exports.papaparse = {
+exports.csv = {
     setUp: function (done) {
         // setup here if necessary
         done();

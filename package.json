@@ -1,8 +1,8 @@
 {
-  "name": "grunt-papaparse",
+  "name": "grunt-csv",
   "description": "The best Grunt plugin ever.",
   "version": "1.0.0",
-  "homepage": "https://github.com/theaccordance/grunt-papaparse",
+  "homepage": "https://github.com/theaccordance/grunt-csv",
   "author": {
     "name": "Joe Mainwaring",
     "email": "joe@mainwaring.dev",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/theaccordance/grunt-papaparse.git"
+    "url": "git://github.com/theaccordance/grunt-csv.git"
   },
   "bugs": {
-    "url": "https://github.com/theaccordance/grunt-papaparse/issues"
+    "url": "https://github.com/theaccordance/grunt-csv/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/theaccordance/grunt-papaparse/blob/master/LICENSE-MIT"
+      "url": "https://github.com/theaccordance/grunt-csv/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
@@ -36,6 +36,7 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "grunt-jslint": "^1.1.15"
+    "grunt-jslint": "^1.1.15",
+    "papaparse": "^5.3.2"
   }
 }

@@ -1,6 +1,6 @@
 /*
- * grunt-papaparse
- * https://github.com/theaccordance/grunt-papaparse
+ * grunt-csv
+ * https://github.com/theaccordance/grunt-csv
  *
  * Copyright (c) 2022 Joe Mainwaring
  * Licensed under the MIT license.
@@ -10,9 +10,7 @@ module.exports = function (grunt) {
     // Please see the Grunt documentation for more information regarding task
     // creation: http://gruntjs.com/creating-tasks
 
-    grunt.registerMultiTask('papaparse', 'A Grunt Wrapper for Papaparse.', function () {
-
-        // console.log(this.files);
+    grunt.registerMultiTask('csv', 'A Grunt Wrapper for Papaparse.', function () {
 
         // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options({

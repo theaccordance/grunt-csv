@@ -1,4 +1,4 @@
-# grunt-papaparse
+# grunt-csv
 
 > The best Grunt plugin ever.
 
@@ -8,23 +8,23 @@ This plugin requires Grunt `^1.5.3`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-papaparse --save-dev
+npm install grunt-csv --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-papaparse');
+grunt.loadNpmTasks('grunt-csv');
 ```
 
-## The "papaparse" task
+## The "csv" task
 
 ### Overview
-In your project's Gruntfile, add a section named `papaparse` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `csv` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  papaparse: {
+  csv: {
     options: {
       // Task-specific options go here.
     },
@@ -60,7 +60,7 @@ In this example, the default options are used to do something with whatever. So 
 
 ```js
 grunt.initConfig({
-  papaparse: {
+  csv: {
     options: {},
     files: {
       'dest/default_options': ['src/testing', 'src/123'],
@@ -74,7 +74,7 @@ In this example, custom options are used to do something else with whatever else
 
 ```js
 grunt.initConfig({
-  papaparse: {
+  csv: {
     options: {
       separator: ': ',
       punctuation: ' !!!',
